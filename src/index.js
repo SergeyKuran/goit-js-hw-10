@@ -4,6 +4,7 @@ import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const DEBOUNCE_DELAY = 300;
+
 const ref = {
   input: document.querySelector('#search-box'),
   ul: document.querySelector('.country-list'),
