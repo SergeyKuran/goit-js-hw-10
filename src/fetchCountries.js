@@ -6,12 +6,14 @@ export function fetchCountries(name) {
 
   return fetch(
     `${URL}${END_POINT}${name}?fields=name,capital,population,flags,languages`
-  ).then(resp => {
-    if (!resp.ok) {
-      throw new Error(
-        Notify.failure('Oops, there is no country with that name')
-      );
-    }
-    return resp.json();
-  });
+  )
+    .then(resp => {
+      if (!resp.ok) {
+        throw new Error(
+          Notify.failure('Oops, there is no country with that name')
+        );
+      }
+      return resp.json();
+    })
+    .catch(err => console.log(err));
 }
